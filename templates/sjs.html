@@ -25,20 +25,20 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Home</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{url_for('index')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             메인
                         </a>
                         <div class="sb-sidenav-menu-heading">EDA Reserch</div>
-                        <a class="nav-link" href="ldy.html">
+                        <a class="nav-link" href="{{url_for('load_ldy')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             이다영
                         </a>
-                        <a class="nav-link" href="sjs.html">
+                        <a class="nav-link" href="{{url_for('load_sjs')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             심준석
                         </a>
-                        <a class="nav-link" href="pjh.html">
+                        <a class="nav-link" href="{{url_for('load_pjh')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             박준희
                         </a>
@@ -57,10 +57,10 @@
                     <br><br>
                     <h4>국가별 GDP 분포 살펴보기</h4>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Highest_GDP_countries.html" frameborder="0" width="90%" height="700"></iframe>
+                        <iframe srcdoc="{{result.Highest_GDP_countries}}" frameborder="0" width="90%" height="700"></iframe>
                     </div>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Global_GDP_Distribution.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Global_GDP_Distribution}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     국가별로 GDP의 크기를 세계지도 상에 scatter plot의 형태로 그려보고, 지역별로 어떠한 차이가 있는지를 살펴보았습니다.
@@ -77,13 +77,13 @@
                     <br>
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/average_GDP.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.average_GDP}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     실제로 barplot을 통해서 대륙별 평균 GDP의 크기를 순서대로 나열해보았을 때, 실제로 버블 맵을 통해 시각적으로 확인했던 것과 동일하게 북미, 아시아, 유럽 지역의 GDP가 타 대륙에 비해서 높다는 지표를 확인할 수 있었습니다. 
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/cumulative_GDP.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.cumulative_GDP}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     이번에는 대륙별 누적 GDP를 기준으로 순서대로 나열해보았는데, 역시 북미, 아시아, 유럽 대륙의 수치가 그 이외의 대륙들 보다 높게 나타나는 것을 확인할 수 있었습니다.
@@ -94,7 +94,7 @@
                     통상적으로 이렇게 누적치와 평균치의 차이가 크게 발생하는 경우, 그 원인 중 하나로 표본의 크기나 구성의 차이를 생각해볼 수 있습니다.
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Population_Pie.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Population_Pie}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     전세계 인구에서 각 대륙별 인구 분포를 파이차트로 그려서 살펴본 결과 아시아가 북미에 비해 압도적으로 높은 비율을 차지하고 있다는 것을 확인할 수 있습니다.
@@ -103,7 +103,7 @@
                     더욱 자세하게 표본의 크기인 국가 수를 비교해보면 아시아는 북미보다 약 2배 더 많은 국가들을 포함하고 있습니다. 이는 누적 GDP가 아시아에서 더 크게 나타날 수 있는 한 가지 주요 이유가 될 수 입니다. 아시아에는 많은 국가들이 포함되어 있기 때문에, 그들의 GDP를 모두 합치면 큰 누적값이 나올 수 있습니다.
                     <h4>아시아와 북미의 GDP 분포 비교 II .표본의 구성 살펴보기</h4>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/violin.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.violin}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     바이올린 플롯을 통해 아시아와 북미 간의 GDP 분포 차이를 분석해본 결과, 아시아는 GDP가 낮은 구간에서의 밀도가 북미에 비해 훨씬 높게 나타납니다.
@@ -115,7 +115,7 @@
                     <br>
                     <h4>Correlations between GDP and other features</h4>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Correlation Heatmap.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Correlation_Heatmap}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <br>
                     GDP와의 상관관계 수치, 그리고 그를 바탕으로 그려본 barplot의 수치를 통해 'Urban_population', 'Population', 그리고 'Armed Forces size'등의 칼럼들과 비교적 높은 양의 상관관계를 보이고 있다는 사실을 확인할 수 있었습니다. 
@@ -123,19 +123,19 @@
                     <br>
                     <h2>추가 고찰 : Co2-Emissions과 경제/인구/국토면적 상관관계분석 EDA</h2>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/co2_emssions_top15.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.co2_emssions_top15}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Correlation of Variables with Co2-Emissions.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Correlation_of_Variables_with_Co2_Emissions}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Economic.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Scatterplot_of_Co2_Emissions_vs_Economic}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Land Area(Km2).html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Scatterplot_of_Co2_Emissions_vs_Land_Area_Km2}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                     <div class="container-fluid px-4">
-                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Population.html" frameborder="0" width="90%" height="800"></iframe>
+                        <iframe srcdoc="{{result.Scatterplot_of_Co2_Emissions_vs_Population}}" frameborder="0" width="90%" height="800"></iframe>
                     </div>
                 </div>
             </main>

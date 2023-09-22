@@ -25,20 +25,20 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Home</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{url_for('index')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             메인
                         </a>
                         <div class="sb-sidenav-menu-heading">EDA Reserch</div>
-                        <a class="nav-link" href="ldy.html">
+                        <a class="nav-link" href="{{url_for('load_ldy')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             이다영
                         </a>
-                        <a class="nav-link" href="sjs.html">
+                        <a class="nav-link" href="{{url_for('load_sjs')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             심준석
                         </a>
-                        <a class="nav-link" href="pjh.html">
+                        <a class="nav-link" href="{{url_for('load_pjh')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             박준희
                         </a>
@@ -58,18 +58,14 @@
                     <h4>GDP에 따른 출생률</h4>
                     <br>
                     <div class="container-fluid px-4">
-                        <img src="ldy/Birth_Rate_vs_GDP.png" alt="">
-                    </div>
-                    <br>
-                    <div class="container-fluid px-4">
-                        <iframe src="ldy/Birth_Fertility_vs_GDP.html" frameborder="0" width="90%" height="700"></iframe>
+                        <iframe srcdoc="{{result.Birth_Fertility_vs_GDP}}" frameborder="0" width="90%" height="700"></iframe>
                     </div>
                     <br>
                     <br>
                     <h4>세계 지도 상에 산점도로 표시</h4>
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="ldy/Birth_of_Countries.html" frameborder="0" width="90%" height="700"></iframe>
+                        <iframe srcdoc="{{result.Birth_of_Countries}}" frameborder="0" width="90%" height="700"></iframe>
                     </div>
                 </div>
             </main>

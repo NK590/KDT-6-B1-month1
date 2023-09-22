@@ -25,20 +25,20 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Home</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{url_for('index')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             메인
                         </a>
                         <div class="sb-sidenav-menu-heading">EDA Reserch</div>
-                        <a class="nav-link" href="ldy.html">
+                        <a class="nav-link" href="{{url_for('load_ldy')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             이다영
                         </a>
-                        <a class="nav-link" href="sjs.html">
+                        <a class="nav-link" href="{{url_for('load_sjs')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             심준석
                         </a>
-                        <a class="nav-link" href="pjh.html">
+                        <a class="nav-link" href="{{url_for('load_pjh')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             박준희
                         </a>
@@ -67,25 +67,25 @@
                     <h4>각 변수간의 상관관계 시각화 (Heatmap)</h4>
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="pjh/heat.html" frameborder="0" width="90%" height="600"></iframe>
+                        <iframe srcdoc="{{result.heat}}" frameborder="0" width="90%" height="600"></iframe>
                     </div>
                     <br>
                     <h4>최저임금에 따른 본인부담 의료비 그래프</h4>
                     <br>
                     <div class="container-fluid px-4">
-                        <iframe src="pjh/MinWage.html" frameborder="0" width="90%" height="600"></iframe>
+                        <iframe srcdoc="{{result.MinWage}}" frameborder="0" width="90%" height="600"></iframe>
                     </div>
                     최저임금이 높을수록 본인부담 의료비가 적은 나라의 분포가 많은 것을 볼 수 있음.
                     <div class="container-fluid px-4">
-                        <iframe src="pjh/Physicians_per_thousand.html" frameborder="0" width="90%" height="600"></iframe>
+                        <iframe srcdoc="{{result.Physicians_per_thousand}}" frameborder="0" width="90%" height="600"></iframe>
                     </div>
                     상관계수를 봤을 때 0.121422로 연관성이 거의 없어보였고 산점도를 살펴봤을 때도 인구 수는 본인부담 의료비에 큰 영향을 끼치지 않는 것 같다.
                     <div class="container-fluid px-4">
-                        <iframe src="pjh/GDP.html" frameborder="0" width="90%" height="600"></iframe>
+                        <iframe srcdoc="{{result.GDP}}" frameborder="0" width="90%" height="600"></iframe>
                     </div>
                     GDP와 본인부담 의료비는 음의 상관관계를 가지지만 상관계수의 절대값이 높지 않고 그래프를 살펴봤을 때로 GDP에 따른 본인부담의료비의 분포가 큰 특징을 보이지 않기 때문에 관련성이 거의 없다고 볼 수 있다.
                     <div class="container-fluid px-4">
-                        <iframe src="pjh/Total tax rate.html" frameborder="0" width="90%" height="600"></iframe>
+                        <iframe srcdoc="{{result.Total_tax_rate}}" frameborder="0" width="90%" height="600"></iframe>
                     </div>
                     상업적 이익에 대한 전체 세금부담 비율과 본인부담 의료비는 양의상관관계를 가지지만 상관계수가 높지 않고 그래프를 살펴봤을 때로 세금부담비율에 따른 본인부담의료비의 분포가 큰 특징을 보이지 않기 때문에 관련성이 거의 없다고 볼 수 있다.
                     <br>
