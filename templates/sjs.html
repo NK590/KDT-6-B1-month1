@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">B1 Monthly Project</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Home</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            메인
+                        </a>
+                        <div class="sb-sidenav-menu-heading">EDA Reserch</div>
+                        <a class="nav-link" href="ldy.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            이다영
+                        </a>
+                        <a class="nav-link" href="sjs.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            심준석
+                        </a>
+                        <a class="nav-link" href="pjh.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            박준희
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Made by:</div>
+                    인공지능 6기 B1반
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4 m-5">
+                    <h2>국가별/ 지역별 GDP 차이 : 대륙별 평균GDP와 누적GDP 순위의 차이가 발생하는 원인 분석</h2>
+                    <br><br>
+                    <h4>국가별 GDP 분포 살펴보기</h4>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Highest_GDP_countries.html" frameborder="0" width="90%" height="700"></iframe>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Global_GDP_Distribution.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    국가별로 GDP의 크기를 세계지도 상에 scatter plot의 형태로 그려보고, 지역별로 어떠한 차이가 있는지를 살펴보았습니다.
+                    <br>
+                    - GDP 순위에서 가장 높은 위치에 있었던 미국, 중국, 일본, 독일 등의 국가들이 확연하게 큰 GDP 수치를 보여주었습니다.
+                    <br>
+                    - 그려진 플롯을 관찰해 보았을 때, 대략적으로 대륙별로 GDP 분포의 차이가 존재한다는 것을 짐작할 수 있었습니다. 특히 북미, 유럽, 아시아 지역의 국가들의 GDP가 상대적으로 다른 대륙들에 비해서 높게 나타나는것을 관찰할 수 있었습니다.
+                    <br>
+                    <br>
+                    이것을 실제로 확인해보기 위해서, 기존에 사용하던 Global Country Information Dataset 2023 데이터셋과
+                    <br>
+                    <a href="https://ourworldindata.org/grapher/continents-according-to-our-world-in-data">continents-according-to-our-world-in-data</a>
+                    데이터셋을 공통된 칼럼(국가명 : 'Country', 'Entry') 기준으로 Merge하여 국가가 속해있는 대륙을 표시해주는 새로운 칼럼 'continent'을 기존 데이터셋에 추가하였습니다.
+                    <br>
+                    <br>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/average_GDP.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    실제로 barplot을 통해서 대륙별 평균 GDP의 크기를 순서대로 나열해보았을 때, 실제로 버블 맵을 통해 시각적으로 확인했던 것과 동일하게 북미, 아시아, 유럽 지역의 GDP가 타 대륙에 비해서 높다는 지표를 확인할 수 있었습니다. 
+                    <br>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/cumulative_GDP.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    이번에는 대륙별 누적 GDP를 기준으로 순서대로 나열해보았는데, 역시 북미, 아시아, 유럽 대륙의 수치가 그 이외의 대륙들 보다 높게 나타나는 것을 확인할 수 있었습니다.
+                    <br>
+                    하지만 특이할 점은 평균 GDP와는 다르게 누적GDP에서는 아시아 지역이 북미 지역에 비해서 더 압도적으로 높은 수치를 기록하는 것을 확인할 수 있었습니다. 
+                    <br>
+                    <br>
+                    통상적으로 이렇게 누적치와 평균치의 차이가 크게 발생하는 경우, 그 원인 중 하나로 표본의 크기나 구성의 차이를 생각해볼 수 있습니다.
+                    <br>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Population_Pie.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    전세계 인구에서 각 대륙별 인구 분포를 파이차트로 그려서 살펴본 결과 아시아가 북미에 비해 압도적으로 높은 비율을 차지하고 있다는 것을 확인할 수 있습니다.
+                    <br>
+                    <br>
+                    더욱 자세하게 표본의 크기인 국가 수를 비교해보면 아시아는 북미보다 약 2배 더 많은 국가들을 포함하고 있습니다. 이는 누적 GDP가 아시아에서 더 크게 나타날 수 있는 한 가지 주요 이유가 될 수 입니다. 아시아에는 많은 국가들이 포함되어 있기 때문에, 그들의 GDP를 모두 합치면 큰 누적값이 나올 수 있습니다.
+                    <h4>아시아와 북미의 GDP 분포 비교 II .표본의 구성 살펴보기</h4>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/violin.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    바이올린 플롯을 통해 아시아와 북미 간의 GDP 분포 차이를 분석해본 결과, 아시아는 GDP가 낮은 구간에서의 밀도가 북미에 비해 훨씬 높게 나타납니다.
+                    <br>
+                    특히 아시아의 플롯이 낮은 GDP 구간에서 가로로 넓은 모습을 보이는 것은, 아시아에는 GDP 수준이 낮은 국가들이 상대적으로 많다는 것을 시사합니다.
+                    <br>
+                    이러한 분포 차이는 아시아의 평균 GDP가 북미보다 낮게 나타나는 주요한 원인 중 하나로 볼 수 있습니다.
+                    <br>
+                    <br>
+                    <h4>Correlations between GDP and other features</h4>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Correlation Heatmap.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <br>
+                    GDP와의 상관관계 수치, 그리고 그를 바탕으로 그려본 barplot의 수치를 통해 'Urban_population', 'Population', 그리고 'Armed Forces size'등의 칼럼들과 비교적 높은 양의 상관관계를 보이고 있다는 사실을 확인할 수 있었습니다. 
+                    <br>
+                    <br>
+                    <h2>추가 고찰 : Co2-Emissions과 경제/인구/국토면적 상관관계분석 EDA</h2>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/co2_emssions_top15.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Correlation of Variables with Co2-Emissions.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Economic.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Land Area(Km2).html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <iframe src="sjs/Scatterplot of Co2-Emissions vs. Population.html" frameborder="0" width="90%" height="800"></iframe>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+</html>
